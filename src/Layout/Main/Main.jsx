@@ -23,7 +23,7 @@ const Main = () => {
         <ul className="menu p-4 md:space-y-4 space-y-2 w-80 min-h-full bg-gray-800 text-base-content">
           {/* Sidebar content here */}
           <li>
-            <Link to="/add" className="border-2 border-black font-medium text-white shadow-xl hover:bg-white hover:text-black bg-[#2144b6]" style={{transition: "all 0.5s"}}>Add Task</Link>
+            <Link to="/" className="border-2 border-black font-medium text-white shadow-xl hover:bg-white hover:text-black bg-[#2144b6]" style={{transition: "all 0.5s"}}>Add Task</Link>
           </li>
           <li>
             <Link to="/all" className="border-2 border-black font-medium text-white shadow-xl hover:bg-white hover:text-black bg-[#2254b6]" style={{transition: "all 0.5s"}}>All Task</Link>

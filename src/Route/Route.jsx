@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <Main />,
     children: [
       {
-        path: "/add",
+        path: "/",
         element: <AddTask />,
       },
       {

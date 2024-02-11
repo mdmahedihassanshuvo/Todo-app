@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const AddTask = () => {
   const [taskInput, setTaskInput] = useState("");
@@ -35,6 +36,7 @@ const AddTask = () => {
 
   return (
     <div className="md:mt-10">
+      <Helmet title="Todo - Add Task" />
       <div className="flex justify-center items-center md:mb-20 mb-10">
         <h3 className="text-3xl">
           <span className="text-[#f4ae0f]">-----------</span> <span className="font-medium">Add Task</span> <span className="text-[#f4ae0f]">-----------</span>
