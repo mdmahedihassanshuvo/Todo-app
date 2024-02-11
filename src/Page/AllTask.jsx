@@ -9,25 +9,25 @@ const AllTask = () => {
     setTasks(storedTasks);
   }, []);
 
-//   const getPriorityColor = (priority) => {
-//     switch (priority.toLowerCase()) {
-//       case "high":
-//         return "bg-red-500";
-//       case "medium":
-//         return "bg-yellow-500";
-//       case "low":
-//         return "bg-green-500";
-//       default:
-//         return "bg-gray-500";
-//     }
-//   };
+  const getPriorityColor = (priority) => {
+    switch (priority.toLowerCase()) {
+      case "high":
+        return "bg-red-500";
+      case "medium":
+        return "bg-yellow-500";
+      case "low":
+        return "bg-green-500";
+      default:
+        return "bg-gray-500";
+    }
+  };
 
-//   const handleMarkAsDone = (index) => {
-//     const updatedTasks = [...tasks];
-//     updatedTasks[index].completed = true;
-//     setTasks(updatedTasks);
-//     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-//   };
+  const handleMarkAsDone = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].completed = true;
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
 
 //   const handleEdit = (index, description) => {
 //     setEditedTask({ index, description });
