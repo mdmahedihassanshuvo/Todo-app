@@ -29,17 +29,17 @@ const AllTask = () => {
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
 
-//   const handleEdit = (index, description) => {
-//     setEditedTask({ index, description });
-//   };
+  const handleEdit = (index, description) => {
+    setEditedTask({ index, description });
+  };
 
-//   const handleUpdateTask = () => {
-//     const updatedTasks = [...tasks];
-//     updatedTasks[editedTask.index].description = editedTask.description;
-//     setTasks(updatedTasks);
-//     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-//     setEditedTask({ index: null, description: "" });
-//   };
+  const handleUpdateTask = () => {
+    const updatedTasks = [...tasks];
+    updatedTasks[editedTask.index].description = editedTask.description;
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setEditedTask({ index: null, description: "" });
+  };
 
   return (
     <div>
