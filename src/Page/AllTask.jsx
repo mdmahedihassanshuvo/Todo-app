@@ -41,6 +41,12 @@ const AllTask = () => {
     setEditedTask({ index: null, description: "" });
   };
 
+  const handleDeleteTask = (index) => {
+    const updatedTasks = tasks.filter((task, i) => i !== index);
+    setTasks(updatedTasks);
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -102,7 +108,7 @@ const AllTask = () => {
                   {editedTask.index === index ? (
                     <button
                       onClick={handleUpdateTask}
-                      className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800 "
+                      className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800"
                       style={{ transition: "all 0.5s" }}
                     >
                       Update
@@ -110,7 +116,8 @@ const AllTask = () => {
                   ) : (
                     <button
                       onClick={() => handleEdit(index, task.description)}
-                      className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800 "
+                      disabled={task?.completed}
+                      className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800"
                       style={{ transition: "all 0.5s" }}
                     >
                       Edit
@@ -120,7 +127,7 @@ const AllTask = () => {
                 <td>
                   <button
                     onClick={() => handleMarkAsDone(index)}
-                    className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800 "
+                    className="p-2 rounded-2xl bg-teal-950 text-white hover:bg-slate-800"
                     style={{ transition: "all 0.5s" }}
                   >
                     Done
@@ -128,7 +135,8 @@ const AllTask = () => {
                 </td>
                 <td>
                   <button
-                    className="p-2 rounded-2xl bg-red-400 text-white hover:bg-slate-800 "
+                    onClick={() => handleDeleteTask(index)}
+                    className="p-2 rounded-2xl bg-red-400 text-white hover:bg-slate-800"
                     style={{ transition: "all 0.5s" }}
                   >
                     Delete
