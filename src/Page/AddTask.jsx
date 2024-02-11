@@ -25,8 +25,8 @@ const AddTask = () => {
       };
       existingTasks.push(newTask);
       localStorage.setItem("tasks", JSON.stringify(existingTasks));
-      setTaskInput(""); // Clear input after adding task
-      setPriority(""); // Reset priority selection
+      setTaskInput("");
+      setPriority("");
       alert("Task added successfully!");
     } else {
       alert("Please enter a task and select a priority before adding.");
